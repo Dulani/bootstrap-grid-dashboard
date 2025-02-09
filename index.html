@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
+        /* Sidebar styles */
         .sidebar {
             min-height: 100vh;
             background-color: #f8f9fa;
@@ -57,6 +58,44 @@
             padding: 0.25rem 0.75rem;
             border: 1px solid rgba(0,0,0,.1);
         }
+
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 3fr 2rem 4fr;
+            grid-template-rows: 0.5rem 5rem 1rem 15rem 9rem 1fr;
+            gap: 1px;
+            background-color: #dee2e6;
+            padding: 1px;
+            height: calc(100vh - 2rem);
+        }
+        .grid-item {
+            background-color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .grid-text {
+            font-size: clamp(0.8rem, 2vw, 1.5rem);
+            margin: 0;
+            word-break: break-word;
+        }
+        .question-area {
+            grid-column: 1 / -1;
+        }
+        .input-area {
+            grid-column: 1 / 3;
+        }
+        .comments-area {
+            grid-column: 1 / 3;
+        }
+        .overview-area {
+            grid-column: 3;
+            grid-row: 4 / -1;
+        }
     </style>
 </head>
 <body>
@@ -70,19 +109,19 @@
                 <div class="d-flex flex-column">
                     <!-- Header/Brand -->
                     <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
-                        <h4 class="mb-0">Dashboard</h4>
+                        <h4 class="mb-0">Modern Dashboard</h4>
                         <button class="btn-close d-md-none" onclick="toggleSidebar()"></button>
                     </div>
                     <!-- Navigation Tabs -->
                     <nav class="nav flex-column mt-3">
                         <a class="nav-link active p-3" href="#tab1" data-bs-toggle="tab">
-                            <i class="bi bi-house-door me-2"></i>Home
+                            <i class="bi bi-house-door me-2"></i>Tab 1
                         </a>
                         <a class="nav-link p-3" href="#tab2" data-bs-toggle="tab">
-                            <i class="bi bi-graph-up me-2"></i>Analytics
+                            <i class="bi bi-graph-up me-2"></i>Tab 2
                         </a>
                         <a class="nav-link p-3" href="#tab3" data-bs-toggle="tab">
-                            <i class="bi bi-gear me-2"></i>Settings
+                            <i class="bi bi-gear me-2"></i>Tab 3
                         </a>
                     </nav>
                 </div>
@@ -93,18 +132,51 @@
                 <!-- Tab Content -->
                 <div class="tab-content p-4">
                     <div class="tab-pane fade show active" id="tab1">
-                        <div class="container">
-                            <!-- Empty div for tab1 content as requested -->
+                        <div class="grid-container">
+                            <div class="grid-item question-area">
+                                <p class="grid-text">tab1: Question</p>
+                            </div>
+                            <div class="grid-item input-area">
+                                <p class="grid-text">tab1: input_best</p>
+                            </div>
+                            <div class="grid-item comments-area">
+                                <p class="grid-text">tab1: comments</p>
+                            </div>
+                            <div class="grid-item overview-area">
+                                <p class="grid-text">tab1: overview</p>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="tab2">
-                        <div class="container">
-                            <!-- Empty div for tab2 content as requested -->
+                        <div class="grid-container">
+                            <div class="grid-item question-area">
+                                <p class="grid-text">tab2: Question</p>
+                            </div>
+                            <div class="grid-item input-area">
+                                <p class="grid-text">tab2: input_best</p>
+                            </div>
+                            <div class="grid-item comments-area">
+                                <p class="grid-text">tab2: comments</p>
+                            </div>
+                            <div class="grid-item overview-area">
+                                <p class="grid-text">tab2: overview</p>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="tab3">
-                        <div class="container">
-                            <!-- Empty div for tab3 content as requested -->
+                        <div class="grid-container">
+                            <div class="grid-item question-area">
+                                <p class="grid-text">tab3: Question</p>
+                            </div>
+                            <div class="grid-item input-area">
+                                <p class="grid-text">tab3: input_best</p>
+                            </div>
+                            <div class="grid-item comments-area">
+                                <p class="grid-text">tab3: comments</p>
+                            </div>
+                            <div class="grid-item overview-area">
+                                <p class="grid-text">tab3: overview</p>
+                            </div>
                         </div>
                     </div>
                 </div>
