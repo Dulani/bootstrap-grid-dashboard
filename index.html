@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            transition: transform 0.3s ease-in-out;
+        }
+        @media (max-width: 767.98px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 250px;
+                z-index: 1000;
+                transform: translateX(-100%);
+            }
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            .sidebar-backdrop {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                display: none;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+        }
+        .nav-link {
+            color: #333;
+        }
+        .nav-link:hover {
+            background-color: #e9ecef;
+        }
+        .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+        .main-content {
+            min-height: 100vh;
+        }
+        .navbar-toggler {
+            padding: 0.25rem 0.75rem;
+            border: 1px solid rgba(0,0,0,.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 px-0 sidebar" id="sidebar">
+                <div class="d-flex flex-column">
+                    <!-- Header/Brand -->
+                    <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Dashboard</h4>
+                        <button class="btn-close d-md-none" onclick="toggleSidebar()"></button>
+                    </div>
+                    <!-- Navigation Tabs -->
+                    <nav class="nav flex-column mt-3">
+                        <a class="nav-link active p-3" href="#tab1" data-bs-toggle="tab">
+                            <i class="bi bi-house-door me-2"></i>Home
+                        </a>
+                        <a class="nav-link p-3" href="#tab2" data-bs-toggle="tab">
+                            <i class="bi bi-graph-up me-2"></i>Analytics
+                        </a>
+                        <a class="nav-link p-3" href="#tab3" data-bs-toggle="tab">
+                            <i class="bi bi-gear me-2"></i>Settings
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <!-- Tab Content -->
+                <div class="tab-content p-4">
+                    <div class="tab-pane fade show active" id="tab1">
+                        <div class="container">
+                            <!-- Empty div for tab1 content as requested -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab2">
+                        <div class="container">
+                            <!-- Empty div for tab2 content as requested -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab3">
+                        <div class="container">
+                            <!-- Empty div for tab3 content as requested -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Header (visible only on small screens) -->
+    <div class="d-md-none p-3 bg-light border-bottom position-fixed w-100" style="z-index: 998;">
+        <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
+            <i class="bi bi-list"></i>
+        </button>
+        <span class="ms-3">Dashboard</span>
+    </div>
+
+    <!-- Add padding for mobile header -->
+    <div class="d-md-none" style="height: 66px;"></div>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const backdrop = document.querySelector('.sidebar-backdrop');
+            sidebar.classList.toggle('show');
+            backdrop.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
